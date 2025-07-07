@@ -1,0 +1,1276 @@
+@font-face {
+    font-family: "Media";
+    src: url('../fonts/font4.ttf');
+}
+@font-face {
+    font-family: "SF Pro";
+    src: url('../fonts/font1.otf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body{
+    overflow-x: hidden;
+    
+}
+
+::selection{
+    background-color: #f78c00;
+    color: black;
+}
+
+
+
+/* ===========================================================NAVBAR CODED HERE=========================================================== */
+
+nav{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    font-family: "SF Pro";
+    padding: 0 100px;
+    z-index: 90;
+    position: fixed;
+}
+
+.nav_logo{
+    width: auto;
+height: 100%;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+padding-bottom: 10px;
+}
+
+.nav_logo img{
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(2);
+    
+}
+
+nav ul {
+    list-style: none;
+
+}
+
+nav ul li{
+    display: inline-block;
+    margin:0 35px;
+
+}
+
+nav ul li a{
+  font-weight: 400;
+  font-family: "Media";
+  letter-spacing: 1px;
+  position: relative;
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+nav a.contact_btn{
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transform-origin: center;
+    transition: .5s ease;
+}
+
+nav a.contact_btn:hover{
+    width: 180px;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+}
+
+/* ===========================================================SECTION 1 CODED HERE=========================================================== */
+
+.herobox{
+    width: 100%;
+    height: 87vh;
+    background-color: white;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+
+.herobox h2{
+    font-family: "SF Pro";
+    font-size: 16px;
+    letter-spacing: 6px;
+    color: #f78c00;
+}
+
+.herobox h1{
+    font-family: "Media";
+    font-size: 80px;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.herobox a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:250px;
+    height: 55px;
+    background-color: white ;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "SF Pro";
+    color: black;
+    margin-top: 30px;
+    transform-origin: center;
+    pointer-events: none; /* Disable until animation completes */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, opacity, background-color, color;
+    border: 2px solid black !important;
+    transition: none !important; /* Let GSAP handle all transitions */
+}
+
+.herobox a:hover{
+    transform: scaleX(1.1);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0,0.331);
+    background-color: black;
+    color: white;
+}
+
+.herobox-auto-slider{
+  width: 50%;
+  height: 100px;
+  position: absolute;
+  bottom: 5%;
+  overflow: hidden;
+  left: 25.5%;
+
+
+}
+
+
+.herobox-slider-holder{
+  width: 200%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  will-change: transform;
+  left: 100%; 
+  gap: 40px;
+  animation: move 30s linear infinite ;
+  
+}
+@keyframes move {
+  from{ left: 150%; }
+  to{ left: -200%;  }
+}
+
+.herobox-slider-holder-1{
+  width: 16%;
+  height: 100%;
+ 
+}
+
+.herobox-slider-holder-1 img{
+width: 100%;
+height: 100%;
+object-fit: contain;
+filter: grayscale(100%);
+transition: filter 0.3s ease;
+
+}
+
+
+.herobox-slider-holder-1 img:hover {
+  filter: grayscale(0%);
+}
+
+
+
+  /* ===========================================================SECTION 2 CONTAINER=========================================================== */
+
+   .section-1{
+    width: 100%;
+    height: 160vh;
+    position: relative;
+    
+  }
+
+.card-container {
+    width: 100%;
+    height: 550px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5%; /* Space between cards */
+  }
+  
+  .card-1 {
+    width: 18%;
+    height: 80%;
+    overflow: hidden;
+    position: relative; /* Changed from absolute */
+    border-radius: 15px;
+    transform: translateY(-30%);
+  }
+  
+  .card-1 img, .card-2 img, .card-3 img, .card-4 img, .card-5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-2 {
+    width: 18%;
+    height: 80%;
+    position: relative; /* Changed from absolute */
+    overflow: hidden;
+    border-radius: 15px;
+    transform: translateY(8%); /* Adjusted for relative positioning */
+  }
+  
+  .card-3 {
+    width: 18%;
+    height: 80%;
+    position: relative; /* Changed from absolute */
+    overflow: hidden;
+    border-radius: 15px;
+    transform: translateY(20%); /* Adjusted for relative positioning */
+  }
+  
+  .card-4 {
+    width: 18%;
+    height: 80%;
+    position: relative; /* Changed from absolute */
+    overflow: hidden;
+    border-radius: 15px;
+    transform: translateY(8%); /* Adjusted for relative positioning */
+  }
+  
+  .card-5 {
+    width: 18%;
+    height: 80%;
+    position: relative; /* Changed from absolute */
+    overflow: hidden;
+    border-radius: 15px;
+    transform: translateY(-30%);
+  }
+
+  .section-1 h2{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 57%;
+    font-family: "Media";
+    font-size: 45px;
+    text-align: left;
+    color: black;
+  }
+
+  .section-1 .line{
+
+    width: 335px;
+    height: 3px;
+    background-color: #f78c00;
+    position: absolute;
+    left: 38%;
+    transform: translate(-50%);
+top: 62%;
+transform-origin: left center;
+z-index: 5;
+transform: scaleX(0);
+  }
+  .section-1 h1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 65%;
+    font-family: "Media";
+    font-size: 52px;
+    opacity: 0%;
+    text-align: left;
+  }
+  
+  .section-1 p.p1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 72%;
+    font-family: "SF Pro";
+    font-size: 30px;
+    text-align: left;
+
+  }
+  .section-1 p.p2{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80%;
+    font-family: "SF Pro";
+    font-size: 20px;
+    text-align: left;
+   letter-spacing: 1;
+  }
+
+  /* ===========================================================CENTERED CARD CONTAINER=========================================================== */
+
+
+  .section-2{
+    width: 100%;
+    height: 120vh;
+    background-color: #1B1B1B;
+    position: relative;
+  }
+
+  .section-2 h1{
+    position: absolute;
+    color: white;
+    font-family: "Media";
+    font-size: 55px;
+    letter-spacing: 1px;
+    top: 10%;
+    left: 10%;
+  }
+
+  .carousel-wrapper {
+    width: 1200px; 
+    height: 60%;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+  .slides-holder{
+    width: 236%;
+    height: 100%;
+   
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .slide{
+    width: 13%;
+    height: 100%;
+border-radius: 20px;
+overflow: hidden;
+margin-right: 20px;
+flex-shrink: 0;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(100%);
+    transition: transform 0.8s ease, filter 0.3s ease; 
+  }
+  
+  .slide:first-child img {
+    filter: grayscale(0%) !important;
+}
+
+.slide.active img {
+    filter: grayscale(0%) !important;
+}
+  .slide img:hover {
+    transform: scale(1.1); 
+    filter: grayscale(0%);
+  }
+
+  .left-button{
+  width: 70px;
+height: 70px;
+border-radius: 50%;
+background-color: transparent;
+overflow: hidden;
+border: 2px solid white;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 30px;
+position: absolute;
+left: 2%;
+top: 52%;
+transform: translateY(-50%);
+cursor: pointer;
+  }
+  .left-button::before{
+content: "";
+width: 70px;
+height: 70px;
+border-radius: 50%;
+background-color: white;
+position: absolute;
+top: -98%;
+left: 100%;
+transition: .5s ease;
+  }
+  .left-button:hover i{
+color: black;
+  }
+  .left-button:hover::before{
+    top: -2%;
+    left: 0%;
+  }
+
+  .left-button i{
+    pointer-events: none;
+    transition: .5s ease;
+    z-index: 80;
+  }
+
+  
+
+  .right-button{
+  width: 70px;
+height: 70px;
+border-radius: 50%;
+background-color: transparent;
+overflow: hidden;
+border: 2px solid white;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 30px;
+position: absolute;
+right: 2%;
+top: 52%;
+transform: translateY(-50%);
+cursor: pointer;
+  }
+  .right-button::before{
+content: "";
+width: 70px;
+height: 70px;
+border-radius: 50%;
+background-color: white;
+position: absolute;
+top: -98%;
+right: 100%;
+transition: .5s ease;
+  }
+  .right-button:hover i{
+color: black;
+  }
+  .right-button:hover::before{
+    top: -2%;
+    right: 0%;
+  }
+
+  .right-button i{
+    pointer-events: none;
+    transition: .5s ease;
+    z-index: 80;
+  }
+
+ /* ===========================================================SECTION 3 CODED HERE===========================================================  */
+
+
+ .section-3{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+ }
+
+ .show-me{
+  width: 245%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  transform: rotate(6deg);
+  position: absolute;
+  left: -15%;
+  bottom: 25%; 
+ }
+
+ .show-me p{
+  font-family: "Media";
+  font-size: 110px;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
+ }
+
+ .passions{
+  width: 295%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  transform: rotate(6deg);
+  position: absolute;
+  left: 2%;
+  bottom: 5%;
+ }
+
+ .passions p{
+  font-family: "Media";
+  font-size: 120px;
+  color: black;
+
+ }
+
+
+  /* ===========================================================SECTION 4 CODED HERE===========================================================  */
+
+  .section-4{
+width: 100%;
+height: 120vh;
+background-color: white;
+position: relative;
+  }
+
+  .left-section-4{
+    width: 35%;
+    height: 60%;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translateY(-50%);
+  }
+
+  .left-section-4 h2{
+font-family: "SF Pro";
+color: #f78c00;
+font-size: 14px;
+letter-spacing: 10px;
+  }
+
+  .left-section-4 h1{
+    font-family: "Media";
+    font-size: 50px;
+   margin-top: 10px;
+
+  }
+
+  .left-section-4 p{
+    font-size: 22px;
+    font-family: "SF Pro";
+    margin-top: 20px; 
+    line-height: 35px;
+    font-weight: 200;
+  }
+  .left-section-4 p span{
+    font-weight:900 ;
+  }
+
+  .right-section-4{
+    width: 35%;
+    height: 50%;
+    position: absolute;
+right: 8%;
+top: 50%;
+transform: translateY(-50%);
+  }
+
+  .main-company{
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-company img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+  }
+
+  .top-company1{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -30%;
+   left:-45%;
+   z-index: 40;
+  }
+  .top-company1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+  }
+
+  .top-company2{
+    width: 200px;
+    height:200px;
+    position: absolute;
+    top: -15%;
+   right:0%;
+   z-index: 51;
+  }
+  .top-company2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+  }
+  .bottom-company1{
+    width: 225px;
+    height: 225px;
+    position: absolute;
+    bottom: -10%;
+   left:-25%;
+   z-index: 51;
+  }
+  .bottom-company1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+  }
+  .bottom-company2{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 0%;
+   right:-5%;
+   z-index: 40;
+  }
+  .bottom-company2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+  }
+
+  /* ===========================================================SECTION 5 CODED HERE===========================================================  */
+
+  .section-5{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+  }
+
+  .section-5 .video-box{
+width: 600px;
+height: 388px;
+border-radius: 15px;
+overflow: hidden;
+background-color: black;
+position: absolute;
+top: 35%;
+left: 10%;
+transform: translateY(-50%);
+  }
+
+  .section-5 .video-box video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .content-section-5{
+    width: 40%;
+    height: 60%;
+    position: absolute;
+    right: 2%;
+    top: 37%;
+    transform: translateY(-50%);
+
+  }
+
+  .content-section-5 h2{
+    font-family: "SF Pro";
+    color: #f78c00;
+    font-size: 14px;
+    letter-spacing: 10px;
+  }
+
+  .content-section-5 h1{
+    font-family: "Media";
+    font-size: 50px;
+   margin-top: 10px;
+  }
+
+  .content-section-5 p{
+    font-size: 22px;
+    font-family: "SF Pro";
+    margin-top: 20px; 
+    line-height: 35px;
+    font-weight: 200;
+  }
+
+  .content-section-5 p span{
+    font-weight: 900;
+  }
+
+    /* ===========================================================SECTION 6 CODED HERE===========================================================  */
+
+    .section-6{
+      width: 100%;
+      height: 120vh;
+background-color: white;
+      position: relative;
+    }
+
+
+   .right-section-6 {
+    width: 35%;
+    position: absolute;
+    right: 10%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    top: -8%;
+    height: 120vh; /* Make sure it has enough height */
+    align-items: flex-end; /* Important to push col-1 to bottom */
+  }
+  
+  .col-1-section-6 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: flex-end; /* Push this whole column to bottom */
+  }
+  
+  
+  .col-2-section-6 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+  }
+  
+
+  
+  /* Common card styling */
+  [class^="cards-"] {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+  }
+  
+  [class^="cards-"] img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  
+  /* ===========================================================SECTION 7 CODED HERE===========================================================  */
+
+
+  .section-7{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .content-section-7{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+  }
+
+  .content-section-7 h2{
+    font-family: "SF Pro";
+    color: #f78c00;
+    font-size: 14px;
+    letter-spacing: 10px;
+    text-align: center;
+  }
+
+  .content-section-7 h1{
+    font-family: "Media";
+    font-size: 50px;
+   margin-top: 10px;
+   text-align: center;
+   color: white;
+  }
+
+  .content-section-7 p{
+    font-size: 22px;
+    font-family: "SF Pro";
+    margin-top:25px; 
+    line-height: 35px;
+    color: white;
+text-align: center;
+font-weight: 500;
+  }
+  
+  .section-7-btn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:250px;
+    height: 55px;
+    background-color: transparent ;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "SF Pro";
+    color: white;
+    margin-top: 30px;
+    transform-origin: center;
+    transition: .3s ease;
+  }
+
+  .section-7-btn a:hover{
+    transform: scaleX(1.1);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0,0.331);
+  
+  }
+  .section-7-btn{
+    position: absolute;
+    top:95%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    
+  }
+
+  .section-7::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.611);
+    
+  }
+  .col-section-7{
+width: 24%;
+height: 240vh;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+position: relative;
+top: -47%;
+  }
+  .card-1-section-7{
+    width:100%;
+    height: 32%;
+    border-radius: 20px;
+  }
+
+  .card-1-section-7 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+
+  /* ===========================================================SECTION 8 CODED HERE===========================================================  */
+
+  .section-8{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+  }
+
+  .swiper {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+   
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .swiper-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    object-position: top;
+  }
+  .swiper-slide:nth-child(1n) {
+    overflow: hidden;
+  }
+
+  .swiper-slide:nth-child(2n) {
+    overflow: hidden;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    overflow: hidden;
+  }
+
+  .swiper-slide:nth-child(4n) {
+    overflow: hidden;
+  }
+
+  .swiper-slide:nth-child(5n) {
+    overflow: hidden;
+  }
+
+  .content-section-8{
+    width: 40%;
+    height: 60%;
+    position: absolute;
+    right: 5%;
+    top: 65%;
+    transform: translateY(-50%);
+  }
+
+  .content-section-8 h2{
+    font-family: "SF Pro";
+    color: #f78c00;
+    font-size: 14px;
+    letter-spacing: 10px;
+  }
+
+  .content-section-8 h1{
+    font-family: "Media";
+    font-size: 50px;
+   margin-top: 10px;
+  }
+
+  .content-section-8 p{
+    font-size: 22px;
+    font-family: "SF Pro";
+    margin-top: 20px; 
+    line-height: 35px;
+    font-weight: 200 ;
+  }
+
+  .content-section-8 p span{
+    font-weight:900;
+  }
+
+/* ===========================================================SECTION 9 CODED HERE===========================================================  */
+
+  .section-9{
+    width: 100%;
+    height: 80vh;
+    background-color: white;
+    position: relative;
+}
+
+.faq-section {
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+header {
+    margin-bottom: 70px;
+}
+
+header > p {
+    font-size: 22px;
+    color: black;
+    font-family: "SF Pro";
+}
+
+h2 {
+    font-size: 52px;
+    color: black;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: "Media";
+}
+
+details {
+    cursor: pointer;
+}
+
+summary:focus-visible {
+    outline: 2px solid orange;
+    outline-offset: 8px;
+    border-radius: 4px;
+    font-family: "SF Pro";
+}
+
+h4 {
+    width: 760px;
+    font-family: "Media";
+    font-size: 32px;
+}
+
+summary {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-family: "SF Pro";
+}
+
+summary::marker {
+    display: none;
+    content: "";
+    font-family: "SF Pro";
+}
+
+.arrow-icon {
+    margin-top: 4px;
+    color: black;
+    font-family: "SF Pro";
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when details is open */
+details[open] .arrow-icon {
+    transform: rotate(-90deg);
+}
+
+details > p {
+    max-width: 650px;
+    color: black;
+    font-size: 18px;
+    line-height: 155%;
+    letter-spacing: .1px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+    font-family: "SF Pro";
+}
+
+hr {
+    border: 1px solid black;
+    margin-block-end: 30px;
+    font-family: "SF Pro";
+}
+
+/* ===========================================================SECTION 10 CODED HERE===========================================================  */
+.section-10 {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section-10 img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.backgrd-section-10 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.532);
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.content-section-10 {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-align: left;
+  max-width: 1000px;
+  padding: 40px 60px;
+  font-family: "SF Pro";
+}
+
+.content-section-10 h1 {
+  font-family: "Media";
+  font-size: 50px;
+  margin-top: 10px;
+  color: white;
+}
+
+.content-section-10 p {
+  font-size: 22px;
+  font-family: "SF Pro";
+  margin-top: 20px;
+  line-height: 35px;
+  font-weight: 500;
+  color: white;
+}
+
+.section-10-buttons {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Button Styles */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  border-radius: 5px;
+  font-family: "SF Pro";
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  padding: 0 25px;
+}
+
+.btn-white {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.btn-white:hover {
+  transform: scaleX(1.1);
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.331);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-outline:hover {
+  transform: scaleX(1.1);
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.331);
+}
+
+/* ===========================================================FOOTER CODED HERE=========================================================== */
+footer {
+  width: 100%;
+  height: 20vh;
+  background-color: rgb(30, 29, 29);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  font-family: "SF Pro";
+  color: white;
+}
+
+footer h2 {
+  font-size: 20px;
+  font-family: "SF Pro";
+  color: white;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+footer ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+footer ul li a:hover::after,
+footer ul li a.active::after {
+  transform: scaleX(1);
+}
+
+footer ul li a.active {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
