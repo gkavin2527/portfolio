@@ -552,7 +552,7 @@ color: black;
   transform-origin: center;
   transform: rotate(6deg);
   position: absolute;
-  left: 2%;
+  left: -12%;
   bottom: 5%;
  }
 
